@@ -1,18 +1,21 @@
-# wake-up-call
-
-# 🛏️ Problem & Opportunity
-
-- **Snooze epidemic** – 1 in 3 adults hit snooze 2-plus times every morning  
-- **Alarms get muted / ignored** → lateness, missed productivity  
-- **Solution:**  
-  1. Phone *calls* you at the exact alarm time  
-  2. AI voice chats until you’re verbally awake  
-  3. Keeps redialing if you don’t answer or hang up before 2 mins
-- **Why it’s exciting for us:** simple concept, real revenue, rich streaming data to engineer
+# Wake-Up-Call 🚀
+An AI voice-alarm that **calls you**, talks until you’re awake, and redials if you try to dodge it.
 
 ---
 
-# 📞 Solution in one diagram
+## 🛏️ Problem & Opportunity
+- **Snooze epidemic** — 1 in 3 adults hits snooze ≥ 2 times each morning  
+- **Muted / ignored alarms** ⇒ lateness and lost productivity  
+- **Our fix**  
+  1. Twilio places a phone **call** exactly at alarm time  
+  2. AI voice (Whisper STT ➜ GPT-4o ➜ Google TTS) chats until you respond coherently  
+  3. If you reject or hang up early, the system **redials**
+
+Why we love it: simple concept, real revenue, real-time data-engineering playground.
+
+---
+
+## 📞 Call Flow
 
 ```mermaid
 flowchart TD
@@ -24,7 +27,6 @@ flowchart TD
     STT --> LLM[GPT-4o LLM]
     LLM --> TTS[Google TTS]
     TTS -- "audio chunks" --> Twilio
-
 ```
 
 
